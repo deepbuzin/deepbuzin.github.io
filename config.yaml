@@ -117,16 +117,27 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary for search
+
 menu:
   main:
     - identifier: posts
-      name: posts
+      name: Posts
       url: /posts/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: search
+      name: Search
+      url: /search/
       weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
 #    - identifier: example
 #      name: example.org
 #      url: https://example.org
