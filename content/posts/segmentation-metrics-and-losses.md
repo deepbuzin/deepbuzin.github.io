@@ -69,7 +69,7 @@ A shared characteristic of all overlap-based metrics is that they do not account
 
 However, overlap-based metrics are suitable when dealing with outliers and generally low-quality segmentations, as they reflect poor alignment and low overlap. They are also appropriate when prioritizing volume.
 
-**Dice score and Intersection over Union**
+#### Dice score and Intersection over Union
 
 The Dice coefficient is the most commonly used metrics in segmentation.
 
@@ -97,7 +97,7 @@ $$
 
 Therefore there’s no additional information gain in considering both of them at the same time.
 
-**TPR, TNR, FPR, FNR**
+#### TPR, TNR, FPR, FNR
 
 True Positive Rate (TPR, Recall, Sensitivity) measures the proportion of positive pixels in the ground truth that are identified as positive in the evaluated segmentation. True Negative Rate (TNR, Specificity) measures the proportion of negative (background) pixels in the ground truth that are identified as negative in the evaluated segmentation. Both of these metrics are highly sensitive to segment size, as they penalize errors in small segments more severely than in larger ones.
 
@@ -129,7 +129,7 @@ FNR = \frac{FN}{FN+TP} = 1 - TPR
 \end{equation}
 $$
 
-**Precision**
+#### Precision
 
 Precision, also know as the Positive Predictive Value (PPV) is used to calculate F-Measure.
 
@@ -139,7 +139,7 @@ Precision = PPV = \frac{TP}{TP+FP}
 \end{equation}
 $$
 
-$**F_{\beta}$-Measure**
+#### $F_{\beta}$-Measure
 
 $F_{\beta}$-Measure represents the trade-off between precision and recall:
 
@@ -157,7 +157,7 @@ F_1 = \frac{2\cdot Precision \cdot Recall}{Precision \cdot Recall} = Dice
 \end{equation}
 $$
 
-**Global Consistency Error**
+#### Global Consistency Error
 
 Let $R(S,x)$ be a set of all the pixels that belong to the same segment as $x$ in the segmentation $S$ (foreground or background). The error between two segmentations $S_1$ and $S_2$ at the pixel $x$ is defined as follows:
 
@@ -198,7 +198,7 @@ $$
 
 where $C$ is the number of classes.
 
-**Generalized Dice score**
+#### Generalized Dice score
 
 The approach presented above, however, ignores class imbalance. In literature one can find a weighted multi-label variant of the Dice score called the Generalized Dice score:
 
@@ -212,7 +212,7 @@ where $w_c=\left|S_g^c\right|^{-2} = \left(TP_c+FN_c\right)^{-2}$. Fuzzy definit
 
 ### Volume based metrics
 
-**Volumetric Similarity**
+#### Volumetric Similarity
 
 Volumetric Similarity (VS) is defined as $1-VD$, where $VD$ is the volumetric distance. We calculate it as the difference between the absolute volumes of the segments divided by the sum of these volumes.
 
@@ -264,7 +264,7 @@ $$
 
 ### Pair counting based metrics
 
-**Rand Index**
+#### Rand Index
 
 The Rand Index (RI) was originally proposed for measuring the similarity between clusterings and was later adapted for classification.
 
@@ -274,7 +274,7 @@ RI(S_g, S_p) = \frac{a+b}{a+b+c+d}
 \end{equation}
 $$
 
-**Adjusted Rand Index**
+#### Adjusted Rand Index
 
 The Adjusted Rand Index (ARI) is a modification of RI with a correction for chance. It can be expressed by the pair-counting groups as:
 
@@ -326,7 +326,7 @@ H(S_1,S_2)=-\sum_{i,j} p\left(S_1^i, S_2^j\right)\log p\left(S_2^i,S_2^j\right)
 \end{equation}
 $$
 
-**Mutual Information**
+#### Mutual Information
 
 The Mutual Information (MI) measures the reduction in uncertainty of one variable when the other one is known.
 
@@ -338,7 +338,7 @@ $$
 
 Note that MI essentially measures how much information the segmentations have in common and therefore rewards high recall.
 
-**Variation of Information**
+#### Variation of Information
 
 The Variation of Information (VoI) measures the amount of information lost when transitioning from one variable to the other.
 
@@ -379,7 +379,7 @@ $$
 
 Here $\mu$ is the mean of means of the two segmentations.
 
-**Probabilistic Distance**
+#### Probabilistic Distance
 
 The Probabilistic Distance (PBD) [[Guido et al. 2001](https://link.springer.com/chapter/10.1007/3-540-45468-3_62)] is designed as a measure of distance between two fuzzy segmentations.
 
@@ -391,7 +391,7 @@ $$
 
 Note that in contrast to Dice, the PBD over-penalizes false positives and false negatives, as they both reduce the denominator and increase the numerator to the point where PBD reaches infinity at zero overlap. This results in PBD strongly reflecting alignment errors, i.e., when the volume is correct and the overlap is low.
 
-**Cohen’s Kappa Coefficient**
+#### Cohen’s Kappa Coefficient
 
 The Cohen’s Kappa Coefficient is a robust measure of agreement between the samples that takes into account the agreement caused by chance.
 
@@ -403,7 +403,7 @@ $$
 
 Chance adjustment makes Kappa a good choice when there is high class imbalance.
 
-**ROC AUC**
+#### ROC AUC
 
 The ROC curve is a plot of TPR against FPR at every possible threshold. The area under the ROC curve reflects the probability for the classifier to rank a positive example higher than the negative one. It is possible to calculate a rough estimate of the AUC for a single measurement case.
 
@@ -419,7 +419,7 @@ Note that calculating AUC this way is generally not recommended, since it signif
 
 Spatial distance-based metrics possess the notable property of taking into account pixel positions outside the overlap region, as well as those within it. This enables them to offer more meaningful rankings in situations where overlap is likely to be low, such as with small object segmentations and low-density segmentations. These metrics are also applicable when prioritizing boundary or overall alignment and in cases involving low-quality segmentations.
 
-**Hausdorff Distance**
+#### Hausdorff Distance
 
 The Hausdorff Distance (HD) is defined as the maximum distance from a point in one set to the nearest point in the other set.
 
@@ -443,7 +443,7 @@ HD can be viewed as an indicator of the largest segmentation error. It is comput
 
 Algorithms have been developed that calculate the HD in near-linear time. Note that HD is sensitive to outliers, which is why it is recommended to use the quantile version instead of applying it directly.
 
-**Average Hausdorff Distance**
+#### Average Hausdorff Distance
 
 The Average Hausdorff Distance is the HD averaged over all points. It is known to be more robust than the original.
 
@@ -461,7 +461,7 @@ d(A,B)=\frac{1}{N}\sum_{a\in A}\min_{b\in B}\|a-b\|
 \end{equation}
 $$
 
-**Mahalanobis Distance**
+#### Mahalanobis Distance
 
 The Mahalanobis Distance (MD) is a metric that measures the distance between a point and a distribution while considering the shape of the distribution. However, when comparing image segmentations, we need to measure the distance between two distributions. To achieve this, we calculate the distance between their means as follows:
 
@@ -495,7 +495,7 @@ This section draws in part on Jun Ma's survey [[Jun Ma 2020](https://arxiv.org/a
 
 Distribution-based loss functions treat both the ground truth and predicted segmentation as probability distributions, with the goal of minimizing their differences. The cross-entropy serves as the foundational loss function in this category, from which others are derived.
 
-**Cross entropy loss**
+#### Cross entropy loss
 
 Cross-entropy (CE) is related to the Kullback-Leibler (KL) divergence, a metric that quantifies the dissimilarity between two probability distributions. In machine learning, when the data distribution is determined by the training set, minimizing KL divergence is equivalent to minimizing CE.
 
@@ -517,7 +517,7 @@ $$
 
 where $w_c$ is the corresponding class weight. It is common to set $w_c$ as inversely proportional to the class frequency to balance out majority classes.
 
-**TopK loss**
+#### TopK loss
 
 TopK loss [[Wu et al. 2016](https://arxiv.org/abs/1605.06885)] focuses the training on the hard pixels by discarding the ones that model evaluates with enough confidence. Notably this approach automatically balances the biased data by skipping the over-learned majority class.
 
@@ -529,7 +529,7 @@ $$
 
 where $t\in(0,1]$ is the discarding threshold and $\bm{1}_{\dots}$ is the binary indication function.
 
-**Focal loss**
+#### Focal loss
 
 The Focal loss [[Lin et al. 2017](https://arxiv.org/abs/1708.02002v2)] directly addresses class imbalance by adding an extra multiplier to the CE. This multiplier diminishes the loss value for the well classified examples, effectively the function heavily towards the hard samples.
 
@@ -547,7 +547,7 @@ A common solution to this issue, with a few exceptions, involves using a surroga
 
 Note that in this section equations (1) - (4) should be interpreted as defined on soft probabilistic labels $\hat{y}_i\in[0,1]$. This interpretation makes these equations differentiable with respect to both the predictions and the model parameters, enabling their use in gradient-based optimization during model training.
 
-**Sensitivity-specificity loss**
+#### Sensitivity-specificity loss
 
 Sensitivity-specificity (SS) loss [[Brosch et al. 2015](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_1)] combines both of these metrics to facilitate training with heavy class imbalance.
 
@@ -559,7 +559,7 @@ $$
 
 where $r$ denotes the weight and is set to 0.05 by default.
 
-**Dice loss**
+#### Dice loss
 
 The Dice loss [[Milletari et al. 2016](https://arxiv.org/abs/1606.04797)] optimizes the Dice coefficient by utilizing a soft approximation. It accounts for class imbalance by definition.
 
@@ -569,7 +569,7 @@ L_{Dice}=1-Dice
 \end{equation}
 $$
 
-**IoU loss**
+#### IoU loss
 
 IoU loss [[Rahman et al. 2016](https://link.springer.com/chapter/10.1007/978-3-319-50835-1_22)] is defined similarly to the Dice loss.
 
@@ -579,7 +579,7 @@ L_{IoU}=1-IoU
 \end{equation}
 $$
 
-**Tversky loss**
+#### Tversky loss
 
 Tversky loss [[Salehi et al. 2017](https://arxiv.org/abs/1706.05721)] adds additional parameters to control the trade-off between false positives and false negatives, since assigning the same weight to false positives and false negatives may result in low recall for small regions. When $\alpha=\beta=0.5$ the Tversky loss becomes equivalent to the Dice loss, and when $\alpha=\beta=1$, it becomes equivalent to the Jaccard loss.
 
@@ -595,7 +595,7 @@ L_{Tversky}(S_g,S_p;\alpha,\beta)=1-Tversky
 \end{equation}
 $$
 
-**Generalized Dice loss**
+#### Generalized Dice loss
 
 Generalized Dice loss optimized the multiclass extension of the Dice coefficient.
 
@@ -605,7 +605,7 @@ L_{GD}=1-GD
 \end{equation}
 $$
 
-**Focal Tversky loss**
+#### Focal Tversky loss
 
 The Focal Tversky loss [[Abraham et al. 2018](https://arxiv.org/abs/1810.07842)] is an extension of the Tversky loss, specifically tailored to enhance performance when dealing with smaller objects. It uses the focusing parameted $\gamma\in[1,3]$ to put heavier emphasis on the hard misclassifier examples.
 
@@ -615,7 +615,7 @@ L_{FTL}=\big(1-Tversky\big)^{\frac1\gamma}
 \end{equation}
 $$
 
-**Asymmetric similarity loss**
+#### Asymmetric similarity loss
 
 Asymmetric similarity loss [[Hashemi et al. 2018](https://arxiv.org/abs/1803.11078)] is a modified version of Tversky loss that establishes more precise rules for weighting false positives (FP) and false negatives (FN), placing greater emphasis on reducing the latter. Suitable values for the hyperparameter beta can be determined based on class imbalance ratios, ensuring a more balanced approach to addressing discrepancies between classes.
 
@@ -625,7 +625,7 @@ L_{Asym}(S_g,S_p;\beta)=1-\frac{TP}{TP+ \frac{\beta^2}{1+\beta^2}FP +  \frac{1}{
 \end{equation}
 $$
 
-**Penalty loss**
+#### Penalty loss
 
 The Penalty loss [[Yang et al. 2019](https://openreview.net/forum?id=H1lTh8unKN)] builds on the Generalized Dice loss by incorporating a coefficient k, which facilitates adding extra weight for false positives (FP) and false negatives (FN).
 
@@ -635,7 +635,7 @@ L_{pGD}=\frac{L_{GD}}{1+k\left(1-L_{GD}\right)}
 \end{equation}
 $$
 
-**Lovász Hinge loss**
+#### Lovász Hinge loss
 
 Lovász Hinge loss [[Berman et al. 2017](https://arxiv.org/abs/1705.08790)] offers an alternative differentiable surrogate function for IoU, distinct from the IoU loss itself. In this approach, the IoU loss is reformulated as a set function on the set of mispredictions. It can be shown that such a set function is submodular, therefore its tight convex hull can be computed efficiently as its Lovász extension.
 
@@ -699,7 +699,7 @@ def lovasz_hinge(logits, labels):
     return loss
 ```
 
-**Exponential Logarithmic Loss**
+#### Exponential Logarithmic Loss
 
 Exponential Logarithmic Loss [[Wong et al. 2018](https://arxiv.org/abs/1809.00076)] is a combination of the exponential logarithmic Dice loss and the weighted exponential cross-entropy loss. It has been proposed to enhance segmentation accuracy for small structures in tasks with significant variability in the sizes of objects to be segmented, ensuring a more balanced performance across different scales.
 
@@ -723,7 +723,7 @@ $$
 
 where $w_c=\left(\frac{\sum_k f_k}{f_c}\right)^{\frac12}$ is the weight to increase the influence of the rare labels, $f_k$ is the frequency of the label $k$.
 
-**Matthews correlation coefficient**
+#### Matthews correlation coefficient
 
 Matthews correlation coefficient loss [[Abhishek et al. 2020](https://arxiv.org/abs/2010.13454)] addresses the fact that the Dice
 loss does not include a penalty for misclassifying the false negative pixels, which affects the accuracy of background segmentation.
@@ -744,7 +744,7 @@ $$
 
 Achieving a good balance of qualities in a loss function can often be accomplished by combining several of them with assigned weights. Various combinations have proven successful, and below is one such example.
 
-**Combo loss**
+#### Combo loss
 
 The Combo loss [[Taghanaki et al. 2018](https://arxiv.org/abs/1805.02798)] aims to tackle class imbalance and offers control over the tradeoff between false positives and false negatives.
 
@@ -761,7 +761,7 @@ $$
 
 Losses in this category primarily rely on the distance transform. Essentially, the distance transform converts a binary segmentation map into a distance map, where each pixel is assigned a value representing its distance to the nearest foreground pixel. However, each approach utilizes the distance transform differently, combining and inverting maps and integrating them into the objective function in unique ways.
 
-**Distance map penalized cross entropy loss (DPCE)**
+#### Distance map penalized cross entropy loss (DPCE)
 
 Distance maps for DPCE [[Caliva et al. 2019](https://arxiv.org/abs/1908.03679)] are generated by computing the distance transform on the segmentation masks and then inverting them by pixel-wise subtracting the binary segmentation from the mask's maximum distance value. This process aims to create a distance mask where pixels close to the foreground are assigned higher weight compared to those further away. A similar procedure is conducted on the inverted version of the segmentation mask to calculate a distance map inside the foreground regions. The resulting maps are then applied to the loss with element-wise multiplication, imposing heavier penalties for errors near the boundary.
 
@@ -775,7 +775,7 @@ where $\Phi$ is the distance penalty and $\odot$ denotes the element-wise produc
 
 ![dpce.png](/segmentation-metrics-and-losses/dpce.png)
 
-**Boundary loss**
+#### Boundary loss
 
 Distance maps for the Boundary loss [[Kervadec et al. 2018](https://arxiv.org/abs/1812.07032)] are constructed as follows: $\phi_G=-D_G(q)$ if $q\in S_g^1$ and $\phi_G=D_G(q)$ otherwise. Here, the distance transform on the ground truth is combined with a negative signed distance transform on the inverted map.
 
@@ -799,7 +799,7 @@ L_{DB}=\frac1N \sum\phi_G\odot \hat{S}
 \end{equation}
 $$
 
-**Hausdorff distance (HD) loss**
+#### Hausdorff distance (HD) loss
 
 Minimizing HD directly can be intractable and may result in unstable training. Nonetheless, it can be approximated using the distance transforms of the ground truth and predicted segmentation [[Karimi et al. 2019](https://arxiv.org/abs/1904.10030)]. $d_p$ and $d_g$ denote regular distance transforms on their respective segmentation maps. Parameter $\alpha$ determines the emphasis placed on larger errors and is set to 2 by default. Since recomputing $d_p$ at every step can be expensive, the authors also propose a one-sided variant of this loss.
 
@@ -813,7 +813,7 @@ $$
 
 This class of loss functions focuses on ensuring the topological correctness of the predicted segmentation. Specifically, it compares two segmentations to confirm that they have the same number of connected components and holes, which is also referred to as the Betti number.
 
-**Topology-Preserving loss**
+#### Topology-Preserving loss
 
 Since the Betti number is discrete, it cannot be directly used for gradient-based optimization. To overcome this issue, one can employ persistent homology [[Hu et al. 2019](https://arxiv.org/abs/1906.05404)]. In this approach, instead of using a single threshold to obtain the predicted segmentation map, all thresholds are considered. As the threshold decreases, certain topological components "get born" (a separate disconnected component appears, a cycle gets bridged) and "die" (one component merges into another, a hole gets filled). We record the threshold value at which such an event occurs as birth time and death time of a component. A full set of these values for every threshold forms a persistence diagram. Each component can be visualized as a dot by plotting the birth time against the death time. It is important to note that, for the ground truth, all components land on the same spot, since they remain unchanged for every value of the threshold.
 
