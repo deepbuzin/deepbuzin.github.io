@@ -11,7 +11,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-#googleAnalytics: UA-123-45
+googleAnalytics: "G-HHKP0NFYPS"
 
 minify:
   disableXML: true
@@ -92,7 +92,7 @@ params:
 
   analytics:
     google:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "G-HHKP0NFYPS"
     bing:
       SiteVerificationTag: "XYZabc"
     yandex:
