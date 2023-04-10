@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on Caveman&#39;s Deep Learning</title>
+    <title>Tags on Computer Visions</title>
     <link>https://deepbuzin.github.io/tags/</link>
-    <description>Recent content in Tags on Caveman&#39;s Deep Learning</description>
+    <description>Recent content in Tags on Computer Visions</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://deepbuzin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2023 12:00:00 +0300</lastBuildDate><atom:link href="https://deepbuzin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>computer vision</title>
+      <link>https://deepbuzin.github.io/tags/computer-vision/</link>
+      <pubDate>Mon, 10 Apr 2023 12:00:00 +0300</pubDate>
+      
+      <guid>https://deepbuzin.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://deepbuzin.github.io/tags/deep-learning/</link>
+      <pubDate>Mon, 10 Apr 2023 12:00:00 +0300</pubDate>
+      
+      <guid>https://deepbuzin.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>losses</title>
+      <link>https://deepbuzin.github.io/tags/losses/</link>
+      <pubDate>Mon, 10 Apr 2023 12:00:00 +0300</pubDate>
+      
+      <guid>https://deepbuzin.github.io/tags/losses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metrics</title>
+      <link>https://deepbuzin.github.io/tags/metrics/</link>
+      <pubDate>Mon, 10 Apr 2023 12:00:00 +0300</pubDate>
+      
+      <guid>https://deepbuzin.github.io/tags/metrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>segmentation</title>
+      <link>https://deepbuzin.github.io/tags/segmentation/</link>
+      <pubDate>Mon, 10 Apr 2023 12:00:00 +0300</pubDate>
+      
+      <guid>https://deepbuzin.github.io/tags/segmentation/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

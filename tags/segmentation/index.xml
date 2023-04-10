@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Computer Visions</title>
-    <link>https://deepbuzin.github.io/</link>
-    <description>Recent content on Computer Visions</description>
+    <title>segmentation on Computer Visions</title>
+    <link>https://deepbuzin.github.io/tags/segmentation/</link>
+    <description>Recent content in segmentation on Computer Visions</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 12:00:00 +0300</lastBuildDate><atom:link href="https://deepbuzin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 12:00:00 +0300</lastBuildDate><atom:link href="https://deepbuzin.github.io/tags/segmentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Segmentation: Metrics and Losses in 40 Easy Steps</title>
       <link>https://deepbuzin.github.io/posts/segmentation-metrics-and-losses/</link>
@@ -16,7 +16,6 @@
       <description>Semantic segmentation is a crucial component of visual perception, with high demand in both low-latency and precision-focused applications. I have decided to create an overview of the current state of this task.
 The first part contains a brief overview of various approaches to evaluating segmentation model performance. Choosing the right set of metrics is often the first step when developing a segmentation system. Understanding the common performance measurements helps clarify the task at hand and provides insights into the challenges that arise when creating such a system.</description>
     </item>
-    
     
   </channel>
 </rss>
