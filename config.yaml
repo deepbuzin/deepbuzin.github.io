@@ -1,6 +1,6 @@
 baseURL: https://deepbuzin.github.io/
 languageCode: en-us
-title: Computer Visions
+title: Hidden Layers
 theme: "PaperMod"
 appearance:
   font_size: xs
@@ -19,7 +19,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: &title This is Computer Visions
+  title: &title This is Hidden Layers
   description: &description "Hi! My name is Andrey, I am computer vision researcher, and this is my blog. Here, I'll be placing
                 my study notes from when I try to catch up with some topic within the domain."
   keywords: [Blog, Deep Learning, Computer Vision, Hugo, PaperMod]
@@ -56,7 +56,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Computer Visions"
+    text: "Hidden Layers"
 #    icon: /apple-touch-icon.png
     icon: icon128.png
 #    <a href="https://www.flaticon.com/free-icons/caveman" title="caveman icons">Caveman icons created by Flat Icons - Flaticon</a>
@@ -65,7 +65,7 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: Computer Visions
+    title: Hidden Layers
     subtitle: "This is subtitle"
     imageUrl: "<img location>"
     imageWidth: 120
@@ -133,6 +133,12 @@ menu:
       name: Posts
       url: /posts/
       weight: 10
+    - identifier: light
+      name: Light
+      url: /light/
+    - identifier: productainment
+      name: Productainment
+      url: /productainment/
     - identifier: search
       name: Search
       url: /search/
