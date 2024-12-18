@@ -1,5 +1,10 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "deepbuzin.github.io" 
+languageCode = "en-us"
+title = "Andrey Buzin"
 theme = "hugo-book"
 
+[markup.goldmark.renderer]
+    unsafe = true
+
+[params]
+    BookTheme = "dark"
